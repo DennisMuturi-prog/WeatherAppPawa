@@ -21,8 +21,8 @@ class WeatherController extends Controller
         ]);
         $apiKey=config('services.openweather.key');
         $response = Http::get("https://api.openweathermap.org/data/3.0/onecall",[
-            'lat'=>$validatedData['latitude'],
-            'lon'=>$validatedData['longitude'],
+            'lat'=>$validatedData['lat'],
+            'lon'=>$validatedData['lon'],
             'units'=>$validatedData['units'],
             'exclude'=>'minutely,hourly,alerts',
             'appid'=>$apiKey
